@@ -1,2 +1,2 @@
 # Utilities
-Script files to help for daily routine work.
+Script files that can help in routine work.
