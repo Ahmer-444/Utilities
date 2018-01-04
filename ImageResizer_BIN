@@ -1,0 +1,20 @@
+# Created by: Ahmer Malik
+
+#!/bin/bash
+
+################################################################################################
+#			Replace Parameters According to Your Needs
+################################################################################################
+SRC='/home/ahmer/Pictures/samuli'
+DST='/home/ahmer/Pictures/res'
+RES='320:240'
+
+
+for file in $SRC/*.{jpg,png}; do
+    mkdir -p "$DST";
+    #echo $file
+    filename=`echo "$file" | rev | cut -d"/" -f1 | rev | cut -d'.' -f1`
+    echo $filename
+    #echo $filename.jpg
+    ffmpeg -i "$file" -vf scale=$RES "$DST/$filename.jpg"
+done
