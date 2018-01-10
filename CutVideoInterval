@@ -1,0 +1,15 @@
+# Created by: Ahmer Malik
+
+#!/bin/bash
+
+################################################################################################
+#			Replace Parameters According to Your Needs
+################################################################################################
+
+inputfile=Tecknow-Car-1.mp4
+outputfile=drive_thru_intagleo2.mp4
+IntervalStart=00:01:28
+IntervalEnd=00:03:20
+
+# Command
+ffmpeg -i $inputfile -ss $IntervalStart -t $IntervalEnd -acodec copy -vcodec copy -async 1 -y  $outputfile
